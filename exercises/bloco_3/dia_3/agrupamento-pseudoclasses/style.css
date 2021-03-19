@@ -1,0 +1,21 @@
+#title {
+  display: block;
+  text-align: center;
+}
+
+#subtitle {
+  display: block;
+  text-align: center;
+}
+
+li:hover {
+  background-color: blueviolet;
+}
+
+li:active {
+  font-family: "Raleway", sans-serif;
+}
+
+ol, ul {
+  list-style: none;
+}
