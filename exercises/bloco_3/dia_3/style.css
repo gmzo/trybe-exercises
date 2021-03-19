@@ -12,13 +12,16 @@
 }
 
 .padding {
-/* insira aqui um padding de 20px na classe abaixo para aplicá-lo aos itens B, C e D */
+  /* insira aqui um padding de 20px na classe abaixo para aplicá-lo aos itens B, C e D */
+  padding: 20px;
 }
 
 .margin {
 /* insira aqui uma margem de 30px na classe abaixo para aplicá-la aos itens C e D */
+margin: 30px;
 }
 
 .border {
 /* insira aqui uma borda com valor '5px solid black' para aplicá-la ao item D */
+border: 5px solid black;
 }
