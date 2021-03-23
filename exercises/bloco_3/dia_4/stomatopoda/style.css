@@ -1,31 +1,65 @@
 * {
-  margin: 0;
-  padding-inline-start: 0;
+	margin: 0;
+	padding-inline-start: 0;
 }
 
 #hero-title {
 	text-align: center;
-	color: black;
+	color: #343A40;
 	font-family: "Raleway", sans-serif;
 	font-size: 40px;
 	font-weight: bold;
 }
 
 .header {
-  background-color: aqua;
-  height: 60px;
-  padding: 20px;
+	background-color: #E9ECEF;
+	height: 60px;
+	padding: 20px;
 }
 
 .menu {
-  background-color: antiquewhite;
+	background-color: #343A40;
 }
 
-.menu ul, li, a {
+.menu ul,
+li,
+a {
+	display: inline-block;
+	list-style: none;
+	text-decoration: none;
+	margin: 10px;
+	font-family: "Arvo", serif;
+	font-size: 20px;
+  color: #ADB5BD;
+}
+
+.main {
+	background-color: #495057;
+	text-align: center;
+  width: 100%;
+	margin: auto;
   display: inline-block;
-  list-style: none;
-  text-decoration: none;
-  margin: 10px;
-  font-family: "Arvo", serif;
-  font-size: 20px;
+}
+
+.arcticle {
+	padding: 12px;
+  display: block;
+  width: 600px;
+  text-align: center;
+  margin: auto;
+}
+
+h2 {
+  font-family: "Raleway", sans-serif;
+  padding: 20px;
+}
+
+p {
+	color: #E9ECEF;
+	font-family: Georgia, Times New Roman, Times, serif;
+	font-weight: 400;
+	font-size: 19px;
+	line-height: 1.632;
+	letter-spacing: 0.1px;
+	margin-bottom: 24px;
 }
