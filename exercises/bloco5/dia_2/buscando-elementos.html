@@ -25,7 +25,9 @@
 
   <script>
 
-    console.log(document.querySelector('#elementoOndeVoceEsta'));
+    console.log(document.querySelector('#elementoOndeVoceEsta')); // 1
+
+    document.querySelector('#elementoOndeVoceEsta').parentNode.style.backgroundColor = 'red'; // 2
 
   </script>
 </body>
