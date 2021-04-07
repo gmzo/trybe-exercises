@@ -93,10 +93,19 @@
     rightContent.className = 'right-content';
     document.querySelector('.main-content').appendChild(rightContent);
 
+    // Exercício 7
     var leftImage = document.createElement('img');
     leftImage.src = 'https://picsum.photos/200';
     leftImage.className = 'small-image';
     document.querySelector('.left-content').appendChild(leftImage);
+
+    // Exercício 8
+    var listaUmADez = document.createElement('ul');
+    var um = document.createElement('li');
+    um.innerText = 'um';
+    listaUmADez.appendChild(um);
+    document.querySelector('.right-content').appendChild(listaUmADez);
+    
 
   </script>
 </body>
