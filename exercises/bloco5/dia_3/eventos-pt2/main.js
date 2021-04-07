@@ -1,8 +1,25 @@
 const divUm = document.getElementById('divUm');
+divUm.addEventListener('click', addTechClass);
+
 const divDois = document.getElementById('divDois');
+divDois.addEventListener('click', addTechClass);
+
 const divTres = document.getElementById('divTres');
+divTres.addEventListener('click', addTechClass);
+
 const input = document.getElementById('input');
 const myWebpage = document.getElementById('mySpotrybefy');
+
+function addTechClass(element) {
+	element.target.className = 'tech';
+	let listaDeDivs = document.querySelectorAll('.container div');
+
+	for (const div of listaDeDivs) {
+		if (div != element.target) {
+			div.className = '';
+		}
+	}
+}
 
 /*
  Copie esse arquivo e edite apenas ele;
@@ -20,10 +37,10 @@ Segue abaixo um exemplo do uso de event.target:
 */
 
 function resetText(event) {
-  // O Event é passado como um parâmetro para a função.
-  event.target.innerText = 'Opção reiniciada';
-  // O event possui várias propriedades, porém a mais usada é o event.target,
-  // que retorna o objeto que disparou o evento.
+	// O Event é passado como um parâmetro para a função.
+	event.target.innerText = 'Opção reiniciada';
+	// O event possui várias propriedades, porém a mais usada é o event.target,
+	// que retorna o objeto que disparou o evento.
 }
 
 divUm.addEventListener('dblclick', resetText);
