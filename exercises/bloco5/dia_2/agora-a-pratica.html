@@ -101,11 +101,26 @@
 
     // Exercício 8
     var listaUmADez = document.createElement('ul');
-    var um = document.createElement('li');
-    um.innerText = 'um';
-    listaUmADez.appendChild(um);
-    document.querySelector('.right-content').appendChild(listaUmADez);
-    
+
+    function createLiRightContent(ulName, liValue) {
+      var li = document.createElement('li');
+      li.innerText = liValue;
+      ulName.appendChild(li);
+
+      return document.querySelector('.right-content').appendChild(ulName);
+
+    }
+
+    createLiRightContent(listaUmADez, 'um');
+    createLiRightContent(listaUmADez, 'dois');
+    createLiRightContent(listaUmADez, 'três');
+    createLiRightContent(listaUmADez, 'quatro');
+    createLiRightContent(listaUmADez, 'cinco');
+    createLiRightContent(listaUmADez, 'seis');
+    createLiRightContent(listaUmADez, 'sete');
+    createLiRightContent(listaUmADez, 'oito');
+    createLiRightContent(listaUmADez, 'nove');
+    createLiRightContent(listaUmADez, 'dez');
 
   </script>
 </body>
