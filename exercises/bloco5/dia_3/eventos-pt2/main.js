@@ -13,6 +13,10 @@ input.addEventListener('keyup', changeTech);
 const myWebpage = document.getElementById('mySpotrybefy');
 myWebpage.addEventListener('dblclick', goToMyWebpage);
 
+const spotrybefyTitle = document.querySelector('h1');
+spotrybefyTitle.addEventListener('mouseenter', changeColor);
+spotrybefyTitle.addEventListener('mouseleave', resetColor);
+
 // ex 2 e 2.1
 function addTechClass(event) {
 	event.target.className = 'tech';
@@ -35,6 +39,15 @@ function changeTech(event) {
 // ex 4
 function goToMyWebpage(event) {
 	window.open('https://gmzo.github.io/portfolio/');
+}
+
+// ex 5
+function changeColor(event) {
+	event.target.style.color = 'blue';
+}
+
+function resetColor(event) {
+	event.target.style.color = '';
 }
 
 /*
