@@ -11,6 +11,7 @@ const input = document.getElementById('input');
 input.addEventListener('keyup', changeTech);
 
 const myWebpage = document.getElementById('mySpotrybefy');
+myWebpage.addEventListener('dblclick', goToMyWebpage);
 
 // ex 2 e 2.1
 function addTechClass(event) {
@@ -29,6 +30,11 @@ function changeTech(event) {
 	let selectedDiv = document.querySelector('.tech');
 
 	selectedDiv.innerText = input.value;
+}
+
+// ex 4
+function goToMyWebpage(event) {
+	window.open('https://gmzo.github.io/portfolio/');
 }
 
 /*
