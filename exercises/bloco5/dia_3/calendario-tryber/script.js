@@ -58,7 +58,9 @@ const dezDaysList = [
 	31,
 ];
 
-// Thinking proccess
+// Ex 1
+
+//Thinking proccess
 
 // função que criará elementos li para cada dia do array dezDaysList como filho da ul com id #days
 // forof percorrendo array dezDaysList
@@ -85,3 +87,23 @@ function createDays() {
 }
 
 createDays();
+
+// Ex 2
+
+//Thinking proccess
+
+// funcao que cria botao de feriados recebendo string como parametro
+// declarar variavel button que armazenara a criacao do elemento html 'button'
+// atribuir a button a classe .btn-holiday
+// atribuir ao texto interno de button  a string passada para a função
+// achar a div que contem a classe .buttons-container
+// inserir button como filho dessa div
+
+function createHolidayButton(string) {
+	var button = document.createElement('button');
+	button.classList = 'btn-holiday';
+	button.innerText = string;
+	document.querySelector('.buttons-container').appendChild(button);
+}
+
+createHolidayButton('Feriados');
