@@ -8,17 +8,27 @@ const divTres = document.getElementById('divTres');
 divTres.addEventListener('click', addTechClass);
 
 const input = document.getElementById('input');
+input.addEventListener('keyup', changeTech);
+
 const myWebpage = document.getElementById('mySpotrybefy');
 
-function addTechClass(element) {
-	element.target.className = 'tech';
+// ex 2 e 2.1
+function addTechClass(event) {
+	event.target.className = 'tech';
 	let listaDeDivs = document.querySelectorAll('.container div');
 
 	for (const div of listaDeDivs) {
-		if (div != element.target) {
+		if (div != event.target) {
 			div.className = '';
 		}
 	}
+}
+
+// ex 3
+function changeTech(event) {
+	let selectedDiv = document.querySelector('.tech');
+
+	selectedDiv.innerText = input.value;
 }
 
 /*
