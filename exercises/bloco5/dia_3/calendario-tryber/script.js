@@ -99,11 +99,33 @@ createDays();
 // achar a div que contem a classe .buttons-container
 // inserir button como filho dessa div
 
+var button = document.createElement('button');
 function createHolidayButton(string) {
-	var button = document.createElement('button');
 	button.classList = 'btn-holiday';
 	button.innerText = string;
 	document.querySelector('.buttons-container').appendChild(button);
 }
 
 createHolidayButton('Feriados');
+
+// Ex 3
+
+//Thinking proccess
+
+// funcao que adiciona a button o efeito de ao clica-lo mudar o background color das li's que tem a classe holiday
+// relembrar a sintaxe de criacao de eventListener
+//  - elementoHTML.eventListener('evento', funcao);
+// reunir li's que possuem a classe holiday utilizando a ferramenta querySelectorAll
+// armazenar estas li's em uma variavel holidays
+// percorrer cada elemento da lista holidays com forof
+// aplicar a mudanca de background color para cada elemento com a funcao .style.backgroundColor
+
+button.addEventListener('click', highlightHolidays);
+
+function highlightHolidays(event) {
+	let holidays = document.querySelectorAll('.holiday');
+
+	for (const holiday of holidays) {
+		holiday.style.backgroundColor = 'yellow';
+	}
+}
