@@ -210,3 +210,24 @@ function zoomOut(event) {
 }
 
 zoomOut();
+
+// Ex 7
+
+// Thinking proccess
+
+//	função createTasks que recebe como parametro uma string 'task' e cria elemento span contendo 'task'
+//		variavel actualTask armazena a criação do elemento html '<span>'
+//		atribui valor do texto interno (innerText) de actualTask a string passada como parâmetro 'task'
+//		variavel divMyTasks armazena o query por div que tenha a classe ('.my-tasks')
+//		introduz actualTask como filha de divMyTasks
+
+function createTask(task) {
+	var actualTask = document.createElement('span');
+	actualTask.innerText = task;
+
+	var divMyTasks = document.querySelector('.my-tasks');
+
+	divMyTasks.appendChild(actualTask);
+}
+
+
