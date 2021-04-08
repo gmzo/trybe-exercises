@@ -170,3 +170,43 @@ function highlightFridays(event) {
 		}
 	}
 }
+
+// Ex 6
+
+// Thinking proccess
+
+//duas funcoes
+//	1 - ao botar o ponteiro do mouse em um dia do calendario, aumente a fonte do número do dia
+//	2 - ponteiro do mouse sai do dia, o tamanho da fonte volta ao padrão
+
+// antes de fazer a primeira funcao, criar eventListener 'zoom' em cada um dos li's
+// para fazer isto:
+//	dar um querySelectorAll('.day') e armazenar numa variável 'unzoomedDays'
+// 	'unzoomedDays' é um array com todos os elementos html li com a classe '.day'
+//	agora criando event listener em cada unzoomedDay of unzoomedDays:
+//		forof em cada unzoomedDay of unzoomedDays:
+//		unzoomedDay.addEventListener('mouseover', zoomIn)
+
+let unzoomedDays = document.querySelectorAll('.day');
+
+for (const unzoomedDay of unzoomedDays) {
+	unzoomedDay.addEventListener('mouseover', zoomIn);
+	unzoomedDay.addEventListener('mouseleave', zoomOut);
+}
+
+//  primeira função 'zoomIn' que recebe event como parametro
+//	o elemento html que chamou o evento, ou seja, o event.target, vai receber .style.size = '40px'
+
+function zoomIn(event) {
+	event.target.style.fontSize = '2em';
+}
+
+zoomIn();
+
+// segunda função 'zoomOut'
+
+function zoomOut(event) {
+	event.target.style.fontSize = '1em';
+}
+
+zoomOut();
