@@ -201,15 +201,11 @@ function zoomIn(event) {
 	event.target.style.fontSize = '2em';
 }
 
-zoomIn();
-
 // segunda função 'zoomOut'
 
 function zoomOut(event) {
 	event.target.style.fontSize = '1em';
 }
-
-zoomOut();
 
 // Ex 7
 
@@ -228,6 +224,32 @@ function createTask(task) {
 	var divMyTasks = document.querySelector('.my-tasks');
 
 	divMyTasks.appendChild(actualTask);
+	return actualTask;
 }
 
+createTask('ESTUDAR');
 
+// Ex 8
+
+// Thinking proccess
+
+// funcao que recebe como parametro string 'cor' cria elemento html div com classe '.task'
+// sendo filha da div com classe '.my-tasks' e tendo atributo .style.backgroundColor = color;
+
+//	criar variavel coloredBackground que vai receber a criação do elemento html div
+//	atribuir a coloredBackground a className: 'task'
+//	atribuir a coloredBackground o style.backgroundColor = color;
+// 	criar variavel divMyTasks que recebe o valor da div do query pela classe ('.my-tasks')
+//	atribuir coloredBackground como filha de divMyTasks
+
+function makeColoredDiv(color) {
+	var coloredBackground = document.createElement('div');
+	coloredBackground.className = 'task';
+	coloredBackground.style.backgroundColor = color;
+
+	var divMyTasks = document.querySelector('.my-tasks');
+
+	divMyTasks.appendChild(coloredBackground);
+}
+
+makeColoredDiv('red');
