@@ -273,6 +273,17 @@ task.addEventListener('click', selectTask);
 //		elemento html que chamou o evento, quero adicionar a classe 'selected' às classes
 //		que o elemento ja possui
 
+// v2
+
+//	tenho que, ao clicar novamente, voltar a ter apenas a classe 'task'
+//	posso aplicar condicao:
+//		se event.target.className === 'task': event.target.classList.add('selected');
+//		se event.target.className === 'task selected': event.target.classList.remove('selected');
+
 function selectTask(event) {
-	event.target.classList.add('selected');
+	if (event.target.className === 'task') {
+		event.target.classList.add('selected');
+	} else if (event.target.className === 'task selected') {
+		event.target.classList.remove('selected');
+	}
 }
