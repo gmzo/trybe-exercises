@@ -253,3 +253,26 @@ function makeColoredDiv(color) {
 }
 
 makeColoredDiv('red');
+
+// Ex 9
+
+// Thinking proccess
+
+// funcao que atribui classe '.task selected' a div que tenha a classe '.task' quando clidada
+//	primeiro, criando eventListener necessario:
+//		criar variavel 'task' que armazenara o query por um elemento html com classe 'task'
+//		adicionar a 'task' um eventListener('click', selectTask)
+
+var task = document.querySelector('.task');
+task.addEventListener('click', selectTask);
+
+// funcao selectTask que recebe parametro event e atribui ao elemento html que chamou o evento
+// (event.target) a classe 'selected';
+//		atribuir a event.target.classList.add('selected')
+//		estou usando o add da funcao classList pois nao quero sobrescrever as funcoes do
+//		elemento html que chamou o evento, quero adicionar a classe 'selected' às classes
+//		que o elemento ja possui
+
+function selectTask(event) {
+	event.target.classList.add('selected');
+}
