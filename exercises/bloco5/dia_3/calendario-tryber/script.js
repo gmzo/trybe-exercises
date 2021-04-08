@@ -139,3 +139,34 @@ function highlightHolidays(event) {
 		}
 	}
 }
+
+// Ex 4 e 5
+
+// Basicamente mesma coisa dos ex's 2 e 3
+
+// Ex 4
+
+var button2 = document.createElement('button');
+function createFridayButton(string) {
+	button2.classList = 'btn-friday';
+	button2.innerText = string;
+	document.querySelector('.buttons-container').appendChild(button2);
+}
+
+createFridayButton('Sexta-feira');
+
+// Ex 5
+
+button2.addEventListener('click', highlightFridays);
+
+let fridays = document.querySelectorAll('.friday');
+
+function highlightFridays(event) {
+	for (const friday of fridays) {
+		if (friday.style.backgroundColor === '') {
+			friday.style.backgroundColor = 'yellow';
+		} else if (friday.style.backgroundColor === 'yellow') {
+			friday.style.backgroundColor = '';
+		}
+	}
+}
