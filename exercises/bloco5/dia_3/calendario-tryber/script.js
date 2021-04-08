@@ -287,3 +287,35 @@ function selectTask(event) {
 		event.target.classList.remove('selected');
 	}
 }
+
+// Ex 10
+
+// Thinking proccess
+
+//	primeiro adicionar eventListener de click em todos os dias:
+//	criar variavel 'unmarkedDays' que recebe todos os elementos com a classe '.day' - var unmarkedDays = document.querySelectorAll('.day');
+//	percorrer a lista 'unmarkedDays' com um for, atribuindo a cada elemento o listener .addEventListener ('click', markDay)
+
+var unmarkedDays = document.querySelectorAll('.day');
+
+for (const unmarkedDay of unmarkedDays) {
+	unmarkedDay.addEventListener('click', markDay);
+}
+
+// funcao que atribui a cor ao dia selecionado, recebe event como parametro e atribui a
+// event.listener.style.color = cor da div com className === 'task selected'
+
+//		criar variavel 'daySelected' que vai guardar o elemento html que chamou o evento:
+//			var daySelected = event.target
+//		como vou atribuir ao elemento que chamou o evento, a cor de fundo da div com classe 'task selected':
+//			achar a div que tem className === 'task selected' com document.querySelector('.task.selected')
+//			atribuir seu valor a uma variavel 'taskSelected'
+//			pegar o valor do seu backgroundColor e atribuí-lo ao event.listener.style.color:
+//				daySelected.style.color = taskSelected.style.backgroundColor
+
+function markDay(event) {
+	var daySelected = event.target;
+	var taskSelected = document.querySelector('.task.selected');
+
+	daySelected.style.color = taskSelected.style.backgroundColor;
+}
