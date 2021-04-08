@@ -201,15 +201,11 @@ function zoomIn(event) {
 	event.target.style.fontSize = '2em';
 }
 
-zoomIn();
-
 // segunda função 'zoomOut'
 
 function zoomOut(event) {
 	event.target.style.fontSize = '1em';
 }
-
-zoomOut();
 
 // Ex 7
 
@@ -228,6 +224,98 @@ function createTask(task) {
 	var divMyTasks = document.querySelector('.my-tasks');
 
 	divMyTasks.appendChild(actualTask);
+	return actualTask;
 }
 
+createTask('ESTUDAR');
 
+// Ex 8
+
+// Thinking proccess
+
+// funcao que recebe como parametro string 'cor' cria elemento html div com classe '.task'
+// sendo filha da div com classe '.my-tasks' e tendo atributo .style.backgroundColor = color;
+
+//	criar variavel coloredBackground que vai receber a criação do elemento html div
+//	atribuir a coloredBackground a className: 'task'
+//	atribuir a coloredBackground o style.backgroundColor = color;
+// 	criar variavel divMyTasks que recebe o valor da div do query pela classe ('.my-tasks')
+//	atribuir coloredBackground como filha de divMyTasks
+
+function makeColoredDiv(color) {
+	var coloredBackground = document.createElement('div');
+	coloredBackground.className = 'task';
+	coloredBackground.style.backgroundColor = color;
+
+	var divMyTasks = document.querySelector('.my-tasks');
+
+	divMyTasks.appendChild(coloredBackground);
+}
+
+makeColoredDiv('red');
+
+// Ex 9
+
+// Thinking proccess
+
+// funcao que atribui classe '.task selected' a div que tenha a classe '.task' quando clidada
+//	primeiro, criando eventListener necessario:
+//		criar variavel 'task' que armazenara o query por um elemento html com classe 'task'
+//		adicionar a 'task' um eventListener('click', selectTask)
+
+var task = document.querySelector('.task');
+task.addEventListener('click', selectTask);
+
+// funcao selectTask que recebe parametro event e atribui ao elemento html que chamou o evento
+// (event.target) a classe 'selected';
+//		atribuir a event.target.classList.add('selected')
+//		estou usando o add da funcao classList pois nao quero sobrescrever as funcoes do
+//		elemento html que chamou o evento, quero adicionar a classe 'selected' às classes
+//		que o elemento ja possui
+
+// v2
+
+//	tenho que, ao clicar novamente, voltar a ter apenas a classe 'task'
+//	posso aplicar condicao:
+//		se event.target.className === 'task': event.target.classList.add('selected');
+//		se event.target.className === 'task selected': event.target.classList.remove('selected');
+
+function selectTask(event) {
+	if (event.target.className === 'task') {
+		event.target.classList.add('selected');
+	} else if (event.target.className === 'task selected') {
+		event.target.classList.remove('selected');
+	}
+}
+
+// Ex 10
+
+// Thinking proccess
+
+//	primeiro adicionar eventListener de click em todos os dias:
+//	criar variavel 'unmarkedDays' que recebe todos os elementos com a classe '.day' - var unmarkedDays = document.querySelectorAll('.day');
+//	percorrer a lista 'unmarkedDays' com um for, atribuindo a cada elemento o listener .addEventListener ('click', markDay)
+
+var unmarkedDays = document.querySelectorAll('.day');
+
+for (const unmarkedDay of unmarkedDays) {
+	unmarkedDay.addEventListener('click', markDay);
+}
+
+// funcao que atribui a cor ao dia selecionado, recebe event como parametro e atribui a
+// event.listener.style.color = cor da div com className === 'task selected'
+
+//		criar variavel 'daySelected' que vai guardar o elemento html que chamou o evento:
+//			var daySelected = event.target
+//		como vou atribuir ao elemento que chamou o evento, a cor de fundo da div com classe 'task selected':
+//			achar a div que tem className === 'task selected' com document.querySelector('.task.selected')
+//			atribuir seu valor a uma variavel 'taskSelected'
+//			pegar o valor do seu backgroundColor e atribuí-lo ao event.listener.style.color:
+//				daySelected.style.color = taskSelected.style.backgroundColor
+
+function markDay(event) {
+	var daySelected = event.target;
+	var taskSelected = document.querySelector('.task.selected');
+
+	daySelected.style.color = taskSelected.style.backgroundColor;
+}
