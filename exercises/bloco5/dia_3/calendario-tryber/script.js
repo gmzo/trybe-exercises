@@ -120,12 +120,22 @@ createHolidayButton('Feriados');
 // percorrer cada elemento da lista holidays com forof
 // aplicar a mudanca de background color para cada elemento com a funcao .style.backgroundColor
 
+//v2
+// condicao: se holiday.style.backgroundColor === '' , aplica 'yellow'
+//    senao, se holiday.style.backgroundColor === 'yellow' , aplica ''
+// '' vazio porque as li's nao tem background color, então se estiver vazio quer dizer
+// que estao com o fundo padrao, o fundo da página em si
+
 button.addEventListener('click', highlightHolidays);
 
-function highlightHolidays(event) {
-	let holidays = document.querySelectorAll('.holiday');
+let holidays = document.querySelectorAll('.holiday');
 
+function highlightHolidays(event) {
 	for (const holiday of holidays) {
-		holiday.style.backgroundColor = 'yellow';
+		if (holiday.style.backgroundColor === '') {
+			holiday.style.backgroundColor = 'yellow';
+		} else if (holiday.style.backgroundColor === 'yellow') {
+			holiday.style.backgroundColor = '';
+		}
 	}
 }
